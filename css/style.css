@@ -4,9 +4,9 @@
 body{
     background-color: rgba(160, 207, 207, 0.418) !important
 }
-#spi{
-    display: none !important;
+#sp{
+    display: none;
 }
 #error-massage{
-    display: none !important;
+    display: none;
 }

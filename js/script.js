@@ -1,15 +1,27 @@
 const toggleSpinner = (param) =>{
-    document.getElementById('spi').style.display = param;
+    document.getElementById('sp').style.display = param;
+    // console.log('fadsfasdf')
+}
+const toggleError = (param) =>{
+    document.getElementById('error-massage').style.display = param;
+    // console.log('fdf')
+}
+const searchField=()=>{
+    document.getElementById('result-field').textContent = '';
+    document.getElementById('details-field').textContent = '';
 }
 
 const searchBtn = () =>{
-    toggleSpinner('none')
+    toggleSpinner('block')
+    searchField()
     const searchText = document.getElementById('input-field').value;
-    if(searchText == ''){
-        document.getElementById('error-massage').style.display = 'block'
-        console.log('no data')
+    if(!searchText){
+        // document.getElementById('error-massage').style.display = 'block'
+        toggleError('block')
+        toggleSpinner('none')
     }
     else{
+        toggleError('none')
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
         fetch(url)
         .then(res => res.json())
@@ -17,9 +29,19 @@ const searchBtn = () =>{
     }  
 }
 
+
+
+
 const displayPhones = (phones) => {
-    const twenty = phones.slice(0,20)
-    console.log(twenty)
+    // console.log(phones)
+    if(phones.length === 0){
+        console.log('not founded')
+        toggleError('block')
+        toggleSpinner('none')
+    }
+    else{
+        const twenty = phones.slice(0,20)
+    // console.log(twenty)
     const resultFieldContainer = document.getElementById('result-field')
     resultFieldContainer.textContent = ''
     twenty.forEach(phone => {
@@ -40,6 +62,8 @@ const displayPhones = (phones) => {
         `;
         resultFieldContainer.appendChild(div)
     })
+    toggleSpinner('none')
+    }
 }
 
 const getPhoneId = (id) =>{
@@ -70,7 +94,7 @@ const displayDetails =(phone) =>{
                       <p class=""><small class="text-muted">Last updated 3 mins ago</small></p>
                     <div class="row">
                         <div class="col-lg-6">
-                            <h3 class="text-muted">Other Features</h3>
+                            <h3 class="text-muted">Other Features:</h3>
                             <p>Bluetooth: ${phone?.others?.Bluetooth ? phone?.others?.Bluetooth: 'No result found'} </p>
                             <p>GPS: ${phone?.others?.GPS ? phone?.others?.GPS: 'No Result Found'}</p>
                             <p>NFC: ${phone?.others?.NFC ? phone?.others?.NFC: 'No Result Found'} </p>
