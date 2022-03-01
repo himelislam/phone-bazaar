@@ -5,17 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Bazar</title>
+
     <!-- Bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Custom css -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body class="container">
+    <!-- Header Section -->
     <header>
-        <h1 id="h1" class="text-center text-primary">Phone Bazar</h1>
+        <h1 id="h1" class="text-center text-primary display-4 py-2">PHONE BAZAAR</h1>
+        <h5 class="text-center text-primary text-muted pb-2">The Complete Solution For Your Desired Smartphone</h5>
     </header>
+
     <main>
+        <!-- Search Input Section -->
         <section>
             <div class="input-group mb-3 w-75 mx-auto">
                 <input id="input-field" type="text" class="form-control" placeholder="Search Here">
@@ -24,11 +31,11 @@
                 </div>
               </div>
         </section>
-
+        <!-- Error Massage Section -->
         <section id="error-massage">
             <h3 class="text-center text-primary">No Result Found</h3>
         </section>
-
+        <!-- Spinner Section -->
         <section>
             <div class="d-flex justify-content-center">
                 <div id="sp" class="spinner-border" role="status">
@@ -36,18 +43,19 @@
                 </div>
             </div>
         </section>
-
+        <!-- Phone Details Section -->
         <section>
             <div id="details-field">
                
               </div>
         </section>
-
+        <!-- Phone Search Result Section -->
         <section>
             <div id="result-field" class="row g-4 ">
                
               </div>
         </section>
+
     </main>
 
     <!-- External Javascript -->

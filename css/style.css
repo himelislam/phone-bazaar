@@ -1,8 +1,10 @@
-#h1{
-    color: red !important;
-}
+/* Custom Css for Phone Bazaar UI */
 body{
-    background-color: rgba(160, 207, 207, 0.418) !important
+    background-color: rgba(160, 207, 207, 0.418) !important;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important
+}
+#h1{
+    color: rgb(3, 192, 120) !important;
 }
 #sp{
     display: none;
