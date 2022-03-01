@@ -1,15 +1,28 @@
+const toggleSpinner = (param) =>{
+    document.getElementById('spi').style.display = param;
+}
+
 const searchBtn = () =>{
+    toggleSpinner('none')
     const searchText = document.getElementById('input-field').value;
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayPhones(data.data))
+    if(searchText == ''){
+        document.getElementById('error-massage').style.display = 'block'
+        console.log('no data')
+    }
+    else{
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displayPhones(data.data))
+    }  
 }
 
 const displayPhones = (phones) => {
+    const twenty = phones.slice(0,20)
+    console.log(twenty)
     const resultFieldContainer = document.getElementById('result-field')
     resultFieldContainer.textContent = ''
-    phones.forEach(phone => {
+    twenty.forEach(phone => {
         // console.log(phone.image)
         const div = document.createElement('div')
         div.classList.add('col')
@@ -58,12 +71,12 @@ const displayDetails =(phone) =>{
                     <div class="row">
                         <div class="col-lg-6">
                             <h3 class="text-muted">Other Features</h3>
-                            <p>Bluetooth: ${phone.others.Bluetooth} </p>
-                            <p>GPS: ${phone.others.GPS}</p>
-                            <p>NFC: ${phone.others.NFC}</p>
-                            <p>Radio: ${phone.others.Radio}</p>
-                            <p>USB: ${phone.others.USB}</p>
-                            <p>WLAN: ${phone.others.WLAN}</p>
+                            <p>Bluetooth: ${phone?.others?.Bluetooth ? phone?.others?.Bluetooth: 'No result found'} </p>
+                            <p>GPS: ${phone?.others?.GPS ? phone?.others?.GPS: 'No Result Found'}</p>
+                            <p>NFC: ${phone?.others?.NFC ? phone?.others?.NFC: 'No Result Found'} </p>
+                            <p>Radio: ${phone?.others?.Radio ? phone?.others?.Radio: 'No Result Found'}</p>
+                            <p>USB: ${phone?.others?.USB ? phone?.others?.USB: 'No Result Found'}</p>
+                            <p>WLAN: ${phone?.others?.WLAN ? phone?.others?.WLAN: 'No Result Found'}</p>
                         </div>
                         <div id="sensors" class="col-lg-6"> 
                             <h3 class="card-title text-muted">Sensors:</h3>

@@ -18,11 +18,23 @@
     <main>
         <section>
             <div class="input-group mb-3 w-75 mx-auto">
-                <input id="input-field" type="text" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input id="input-field" type="text" class="form-control" placeholder="Search Here">
                 <div class="input-group-append">
                   <button onclick="searchBtn()" class="btn btn-outline-secondary" type="button">Search</button>
                 </div>
               </div>
+        </section>
+
+        <section id="error-massage">
+            <h3 class="text-center text-primary">No Result Found</h3>
+        </section>
+
+        <section>
+            <div class="d-flex justify-content-center">
+                <div id="spi" class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+            </div>
         </section>
 
         <section>

@@ -1,3 +1,12 @@
 #h1{
     color: red !important;
 }
+body{
+    background-color: rgba(160, 207, 207, 0.418) !important
+}
+#spi{
+    display: none !important;
+}
+#error-massage{
+    display: none !important;
+}
