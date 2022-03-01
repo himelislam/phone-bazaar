@@ -82,7 +82,6 @@ const displayDetails =(phone) =>{
                       <p class="">Display Size: ${phone.mainFeatures.displaySize}</p>
                       <p class="">Memory: ${phone.mainFeatures.memory}</p>
                       <p class="">Storage: ${phone.mainFeatures.storage}</p>
-                      <p class=""><small class="text-muted">Last updated 3 mins ago</small></p>
                     <div class="row">
                     <div class="col-lg-6">
                         <h3 class="text-muted">Other Features:</h3>
